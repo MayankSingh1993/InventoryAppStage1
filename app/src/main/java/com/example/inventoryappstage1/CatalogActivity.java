@@ -53,7 +53,7 @@ public class CatalogActivity extends AppCompatActivity {
             TextView displayView = (TextView) findViewById(R.id.text_view_bookstore);
             displayView.setText("The Bookstore table contains " + cursor.getCount() + " book.\n\n");
 
-            displayView.append(BookStoreEntry._ID + "-" + BookStoreEntry.COLUMN_PRODUCT_NAME + "-" + BookStoreEntry.COLUMN_PRODUCT_PRICE + "-" + BookStoreEntry.COLUMN_QUANTITY + "-" + BookStoreEntry.COLUMN_SUPPLIER_NAME + "-" + BookStoreEntry.COLUMN_SUPPLIER_PHONE_NUMBER + "\n");
+            displayView.append(BookStoreEntry._ID + " - " + BookStoreEntry.COLUMN_PRODUCT_NAME + " - " + BookStoreEntry.COLUMN_PRODUCT_PRICE + " - " + BookStoreEntry.COLUMN_QUANTITY + " - " + BookStoreEntry.COLUMN_SUPPLIER_NAME + " - " + BookStoreEntry.COLUMN_SUPPLIER_PHONE_NUMBER + "\n");
             // Figure out the index of each column
             int idColumnIndex = cursor.getColumnIndex(BookStoreEntry._ID);
             int nameColumnIndex = cursor.getColumnIndex(BookStoreEntry.COLUMN_PRODUCT_NAME);
@@ -75,7 +75,7 @@ public class CatalogActivity extends AppCompatActivity {
                 String supplierPhoneNumber = cursor.getString(supplierPhoneNumberColumnIndex);
 
                 // Display the values from each column of the current row in the cursor in the TextView
-                displayView.append(("\n" + currentID + "-" + currentName + "-" + price + "-" + quantity + "-" + supplierName + "-" + supplierPhoneNumber));
+                displayView.append(("\n" + currentID + " - " + currentName + " - " + price + " - " + quantity + " - " + supplierName + " - " + supplierPhoneNumber));
             }
         } finally {
             // Always close the cursor when you're done reading from it. This releases all its

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.inventoryappstage1.data.BookStoreContract.BookStoreEntry;
 import com.example.inventoryappstage1.data.BookStoreDbHelper;
@@ -75,7 +76,9 @@ public class EditorActivity extends AppCompatActivity {
             case R.id.action_save:
                 // Do nothing for now
                 insertData();
+                finish();
                 return true;
+
             // Respond to a click on the "Delete" menu option
             case R.id.action_delete:
                 // Do nothing for now
@@ -95,13 +98,18 @@ public class EditorActivity extends AppCompatActivity {
 
         String productNameString = mProductNameEditText.getText().toString().trim();
         String productPriceString = mProductPriceEditText.getText().toString().trim();
-        int price = Integer.parseInt(productPriceString);
         String quantityString = mProductQuantityEditText.getText().toString().trim();
-        int quantity = Integer.parseInt(quantityString);
+        int price = 0;
+        int quantity = 0;
+        try {
+            price = Integer.parseInt(productPriceString);
+            quantity = Integer.parseInt(quantityString);
+        } catch (NumberFormatException nfe) {
+            Toast.makeText(EditorActivity.this, "You entered a empty row", Toast.LENGTH_SHORT).show();
+        }
+
         String productSupplierNameString = mProductSupplierNameEditText.getText().toString().trim();
         String productSupplierPhoneNumberString = mProductSupplierPhoneNumberEditText.getText().toString().trim();
-
-
         mDbHelper = new BookStoreDbHelper(this);
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
@@ -122,6 +130,16 @@ public class EditorActivity extends AppCompatActivity {
         // there are no values).
         // The third argument is the ContentValues object containing the info for Book.
         long newRowId = db.insert(BookStoreEntry.TABLE_NAME, null, values);
+
+        // Show a toast message depending on whether or not the insertion was successful
+        if (newRowId == -1) {
+            // If the row ID is -1, then there was an error with insertion.
+            Toast.makeText(this, "Error with saving book", Toast.LENGTH_SHORT).show();
+        } else {
+            // Otherwise, the insertion was successful and we can display a toast with the row ID.
+            Toast.makeText(this, "Book saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 }
