@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Layout for the editor -->
+
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:orientation = "vertical"
+    android:padding = "@dimen/_16dp"
+    tools:context = ".DetailActivity" >
+
+    <!-- Product Info category -->
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:orientation = "horizontal" >
+
+        <!-- Label -->
+
+        <TextView
+            style = "@style/CategoryStyle"
+            android:text = "@string/category_product_info" />
+
+        <!-- Input fields -->
+
+        <LinearLayout
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "2"
+            android:orientation = "vertical"
+            android:paddingStart = "@dimen/_4dp"
+            android:paddingLeft = "@dimen/_4dp"
+            android:paddingEnd = "@dimen/_4dp"
+            android:paddingRight = "@dimen/_4dp" >
+
+            <!-- Product Name field -->
+            <EditText
+                android:id = "@+id/edit_product_name"
+                style = "@style/EditorFieldStyle"
+                android:layout_width = "match_parent"
+                android:hint = "@string/hint_product_name"
+                android:inputType = "textCapWords"
+                tools:ignore = "Autofill" />
+            <!-- Product Price field -->
+            <EditText
+                android:id = "@+id/edit_product_price"
+                style = "@style/EditorFieldStyle"
+                android:layout_width = "match_parent"
+                android:hint = "@string/hint_product_price"
+                android:inputType = "numberDecimal"
+                tools:ignore = "Autofill" />
+            <!-- Product Quantity field -->
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:orientation = "horizontal" >
+
+                 <Button
+                     android:id = "@+id/increaseQuantity"
+                     android:layout_width = "0dp"
+                     android:layout_height = "wrap_content"
+                     android:layout_weight = "1"
+                     android:background = "@drawable/sale_button_style"
+                     android:foreground = "?selectableItemBackground"
+                     android:text = "@string/add"
+                     android:textColor = "@color/colorPrimary" />
+                <EditText
+                    android:id = "@+id/edit_product_quantity"
+                    style = "@style/EditorFieldStyle"
+                    android:layout_width = "0dp"
+                    android:layout_weight = "2"
+                    android:hint = "@string/hint_product_quantity"
+                    android:inputType = "number"
+                    tools:ignore = "Autofill" />
+                <Button
+                    android:id = "@+id/decreaseQuantity"
+                    android:layout_width = "0dp"
+                    android:layout_height = "wrap_content"
+                    android:layout_weight = "1"
+                    android:background = "@drawable/sale_button_style"
+                    android:foreground = "?selectableItemBackground"
+                    android:text = "@string/remove"
+                    android:textColor = "@color/colorPrimary" />
+            </LinearLayout >
+        </LinearLayout >
+    </LinearLayout >
+
+    <!--Supplier's Category-->
+
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:orientation = "horizontal" >
+
+        <!-- Label -->
+        <TextView
+            style = "@style/CategoryStyle"
+            android:text = "@string/category_supplier" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width = "0dp"
+            android:layout_height = "wrap_content"
+            android:layout_weight = "2"
+            android:orientation = "vertical"
+            android:paddingStart = "@dimen/_4dp"
+            android:paddingLeft = "@dimen/_4dp"
+            android:paddingEnd = "@dimen/_4dp"
+            android:paddingRight = "@dimen/_4dp" >
+            <!-- Product Supplier Name field -->
+            <EditText
+                android:id = "@+id/edit_product_supplier_name"
+                style = "@style/EditorFieldStyle"
+                android:layout_width = "match_parent"
+                android:hint = "@string/hint_product_supplier_name"
+                android:inputType = "textCapWords"
+                tools:ignore = "Autofill" />
+            <!-- Product Supplier Phone Number field -->
+            <EditText
+                android:id = "@+id/edit_product_supplier_phone_number"
+                style = "@style/EditorFieldStyle"
+                android:layout_width = "match_parent"
+                android:hint = "@string/hint_product_supplier_phone_number"
+                android:inputType = "phone"
+                tools:ignore = "Autofill" />
+        </LinearLayout >
+    </LinearLayout >
+    <Button
+        android:id = "@+id/order"
+        android:layout_width = "match_parent"
+        android:layout_height = "60dp"
+        android:layout_marginTop = "@dimen/_16dp"
+        android:background = "@drawable/sale_button_style"
+        android:foreground = "?selectableItemBackground"
+        android:text = "@string/order"
+        android:textColor = "@color/colorPrimary" />
+</LinearLayout >

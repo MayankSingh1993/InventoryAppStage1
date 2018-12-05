@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_width = "match_parent"
+    android:layout_height = "wrap_content"
+    android:orientation = "vertical" >
+
+    <TextView
+        android:id = "@+id/supplierName"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:padding = "@dimen/_16dp"
+        android:text = "@string/contact"
+        android:textAppearance = "?android:textAppearanceMedium"
+        android:textColor = "@color/colorAccent" />
+
+    <TextView
+        android:id = "@+id/phone"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_gravity = "center"
+        android:drawableEnd = "@drawable/baseline_call_black_24dp"
+        android:drawableRight = "@drawable/baseline_call_black_24dp"
+        android:drawablePadding = "@dimen/_32dp"
+        android:paddingLeft = "@dimen/_16dp"
+        android:paddingTop = "@dimen/_16dp"
+        android:paddingRight = "@dimen/_16dp"
+        android:paddingBottom = "@dimen/_16dp"
+        android:text = "@string/call_at"
+        android:textAppearance = "?android:textAppearanceMedium" />
+
+</LinearLayout >

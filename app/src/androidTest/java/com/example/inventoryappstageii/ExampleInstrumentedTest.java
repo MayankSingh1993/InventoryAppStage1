@@ -1,4 +1,4 @@
-package com.example.inventoryappstage1;
+package com.example.inventoryappstageii;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
